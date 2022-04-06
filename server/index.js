@@ -1,8 +1,9 @@
 const express = require('express')
+const path = require('path')
 
 const app = express()
+app.use(express.static('public')) //static is css, js files, in front end etc.
 
-const path = require('path')
 // endpoint
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../index.html'))
